@@ -29,7 +29,5 @@ app.use("/api/webhook", webhookRoutes);
 
 const PORT = process.env.PORT || 3000;
 
-connectDB().then(() => {
-  app.listen(PORT, () => console.log(`🚀 Server jalan di http://localhost:${PORT}`));
-});
-
+connectDB().catch(err => console.error("MongoDB error:", err.message));
+module.exports = app;
