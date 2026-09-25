@@ -18,14 +18,16 @@ app.use(
   })
 );
 
-app.use(express.static(path.join(__dirname, "public")));
-
 app.get("/health", (req, res) => {
   res.json({ ok: true, service: "QRIS Backend", time: new Date() });
 });
 
 app.use("/api/qris", qrisRoutes);
 app.use("/api/webhook", webhookRoutes);
+
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
 const PORT = process.env.PORT || 3000;
 
