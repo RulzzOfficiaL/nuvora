@@ -3,10 +3,6 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' https://client-cdn.bangjeff.com https://react-circle-flags.pages.dev https://placehold.co data:; connect-src 'self';">
-  <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta http-equiv="X-Content-Type-Options" content="nosniff">
-  <meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
   <title>Nuvora Store - Top Up Game Termurah</title>
   <link rel="shortcut icon" href="https://client-cdn.bangjeff.com/favicon-05318000.webp.webp?v=3">
   
@@ -79,7 +75,7 @@
     .hide-scrollbar::-webkit-scrollbar { display: none; }
     .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-    /* CSS BANNER SLIDER DARI REFERENSI (Bikin pas 100% di HP) */
+    /* CSS BANNER SLIDER */
     .banner-slider { position: relative; overflow: hidden; border-radius: 1.5rem; }
     .banner-track { display: flex; transition: transform .6s cubic-bezier(.65,0,.25,1); }
     .banner-slide { flex: 0 0 100%; min-width: 100%; }
@@ -99,95 +95,101 @@
   <div class="border-b border-border/20">
     <div class="container max-w-[1200px] mx-auto flex h-16 items-center justify-between gap-4">
       <div class="flex items-center">
-        <a href="#" class="text-2xl font-bold text-white tracking-wider">
+        <a href="https://topup.nuvorastore.my.id" class="text-2xl font-bold text-white tracking-wider">
           NUVORA<span class="text-primary">STORE</span>
         </a>
       </div>
       <div class="flex flex-1 items-center justify-end gap-2">
+        <!-- Input Search Desktop -->
         <div class="relative w-full hidden md:flex max-w-xs">
-          <input type="text" id="searchInput" placeholder="Cari Game atau Voucher" class="h-9 w-full rounded-lg border border-muted-foreground/10 bg-input/80 pl-9 pr-4 text-sm text-white placeholder-muted-foreground/75 outline-none focus:border-primary transition-colors">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="absolute left-3 top-1/2 w-4 h-4 -translate-y-1/2 text-muted-foreground"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          <input type="text" id="searchInput" placeholder="Cari Game atau Voucher..." class="h-9 w-full rounded-lg border border-muted-foreground/10 bg-input/80 pl-9 pr-4 text-sm text-white placeholder-muted-foreground/75 outline-none focus:border-primary transition-colors">
+          <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground text-xs"></i>
         </div>
-        <button class="md:hidden inline-flex items-center justify-center rounded-lg border border-border/50 bg-transparent hover:bg-accent/75 h-9 w-9 text-sm font-medium">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+        <!-- Toggle Mobile Search -->
+        <button onclick="toggleMobileSearch()" class="md:hidden inline-flex items-center justify-center rounded-lg border border-border/50 bg-transparent hover:bg-accent/75 h-9 w-9 text-sm font-medium text-white">
+          <i class="fa-solid fa-magnifying-glass"></i>
         </button>
-        <button class="block md:hidden inline-flex items-center justify-center rounded-lg border border-border/50 bg-transparent hover:bg-accent/75 h-9 w-9 text-sm font-medium" onclick="document.getElementById('mobileMenu').classList.toggle('hidden')">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
+        <!-- Toggle Mobile Menu -->
+        <button class="block md:hidden inline-flex items-center justify-center rounded-lg border border-border/50 bg-transparent hover:bg-accent/75 h-9 w-9 text-sm font-medium text-white" onclick="document.getElementById('mobileMenu').classList.toggle('hidden')">
+          <i class="fa-solid fa-bars"></i>
         </button>
       </div>
     </div>
   </div>
+
+  <!-- Input Search Mobile Box -->
+  <div id="mobileSearchBox" class="hidden md:hidden p-3 bg-secondary border-b border-border/20">
+    <div class="relative w-full">
+      <input type="text" id="searchInputMobile" placeholder="Cari Game atau Voucher..." class="h-9 w-full rounded-lg border border-muted-foreground/20 bg-input/80 pl-9 pr-4 text-sm text-white placeholder-muted-foreground/75 outline-none focus:border-primary">
+      <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground text-xs"></i>
+    </div>
+  </div>
+
+  <!-- Navbar Desktop -->
   <nav class="container max-w-[1200px] mx-auto hidden h-10 w-full items-center justify-between border-b border-border/20 md:flex">
     <div class="flex h-full items-center gap-5">
-      <a class="relative inline-flex h-full items-center gap-2 text-sm font-medium text-primary" href="#">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+      <a class="relative inline-flex h-full items-center gap-2 text-sm font-medium text-primary" href="https://topup.nuvorastore.my.id">
+        <i class="fa-solid fa-house text-xs"></i>
         <span>Topup</span>
         <div class="absolute inset-x-0 bottom-0 h-[2px] bg-primary"></div>
       </a>
-      <a class="relative inline-flex h-full items-center gap-2 text-sm font-medium text-foreground" href="#">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+      <a class="relative inline-flex h-full items-center gap-2 text-sm font-medium text-foreground hover:text-primary transition-colors" href="/cek-transaksi">
+        <i class="fa-solid fa-receipt text-xs"></i>
         <span>Cek Transaksi</span>
       </a>
     </div>
     <div class="flex h-full items-center gap-5">
-      <a class="relative inline-flex h-full items-center gap-2 text-sm font-medium text-foreground" href="#">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" x2="3" y1="12" y2="12"/></svg>
+      <a class="relative inline-flex h-full items-center gap-2 text-sm font-medium text-foreground hover:text-primary transition-colors" href="/login.html">
+        <i class="fa-solid fa-right-to-bracket text-xs"></i>
         <span>Masuk</span>
       </a>
-      <a class="relative inline-flex h-full items-center gap-2 text-sm font-medium text-foreground" href="#">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" x2="19" y1="8" y2="14"/><line x1="22" x2="16" y1="11" y2="11"/></svg>
+      <a class="relative inline-flex h-full items-center gap-2 text-sm font-medium text-foreground hover:text-primary transition-colors" href="/register.html">
+        <i class="fa-solid fa-user-plus text-xs"></i>
         <span>Daftar</span>
       </a>
     </div>
   </nav>
 </header>
 
-<!-- Mobile Menu -->
+<!-- Mobile Menu Drawer -->
 <div id="mobileMenu" class="hidden fixed inset-0 z-50 md:hidden">
   <div class="absolute inset-0 bg-black/50" onclick="document.getElementById('mobileMenu').classList.add('hidden')"></div>
   <div class="absolute top-0 left-0 w-4/5 max-w-sm h-full bg-secondary overflow-y-auto">
     <div class="flex items-center justify-between p-4 border-b border-border/20">
       <span class="text-xl font-bold text-white">NUVORA<span class="text-primary">STORE</span></span>
-      <button onclick="document.getElementById('mobileMenu').classList.add('hidden')" class="inline-flex items-center justify-center rounded-lg hover:bg-accent/75 h-9 w-9">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      <button onclick="document.getElementById('mobileMenu').classList.add('hidden')" class="inline-flex items-center justify-center rounded-lg hover:bg-accent/75 h-9 w-9 text-white">
+        <i class="fa-solid fa-xmark"></i>
       </button>
     </div>
-    <div class="border-b border-border/20 border-dashed mx-4 my-2"></div>
     <nav class="p-4 space-y-2">
-      <a href="#" class="flex items-center justify-between py-3 text-sm font-medium text-foreground">
+      <a href="https://topup.nuvorastore.my.id" class="flex items-center justify-between py-3 text-sm font-medium text-foreground border-b border-white/10">
         <span>Topup</span>
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+        <i class="fa-solid fa-house"></i>
       </a>
-      <a href="#" class="flex items-center justify-between py-3 text-sm font-medium text-foreground">
+      <a href="/cek-transaksi" class="flex items-center justify-between py-3 text-sm font-medium text-foreground border-b border-white/10">
         <span>Cek Transaksi</span>
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+        <i class="fa-solid fa-receipt"></i>
       </a>
-      <div class="border-b border-border/20 my-2"></div>
-      <a href="#" class="flex items-center justify-between py-3 text-sm font-medium text-foreground">
+      <a href="/login.html" class="flex items-center justify-between py-3 text-sm font-medium text-foreground border-b border-white/10">
         <span>Masuk</span>
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" x2="3" y1="12" y2="12"/></svg>
+        <i class="fa-solid fa-right-to-bracket"></i>
       </a>
-      <a href="#" class="flex items-center justify-between py-3 text-sm font-medium text-foreground">
+      <a href="/register.html" class="flex items-center justify-between py-3 text-sm font-medium text-foreground">
         <span>Daftar</span>
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" x2="19" y1="8" y2="14"/><line x1="22" x2="16" y1="11" y2="11"/></svg>
+        <i class="fa-solid fa-user-plus"></i>
       </a>
     </nav>
   </div>
 </div>
 
-<!-- Main -->
+<!-- Main Section -->
 <main class="relative">
-  <div class="sr-only">
-    <h1>Nuvora Store</h1>
-    <p>CV. NUVORA ID</p>
-  </div>
-
-  <!-- BANNER SLIDER DENGAN CSS PERSIS KODE REFERENSI -->
+  <!-- Banner Slider -->
   <section class="px-4 py-4 lg:py-6">
     <div class="w-full max-w-[1200px] mx-auto">
       <div class="banner-slider">
         <div class="banner-track" id="bannerTrack">
-          <a class="banner-slide" href="#">
+          <a class="banner-slide" href="https://topup.nuvorastore.my.id">
             <img alt="NUVORASTORE Banner 1" src="banner.png" onerror="this.src='https://placehold.co/1200x400/3d1a78/ffffff?text=Banner+1'">
           </a>
           <a class="banner-slide" href="https://wa.me/62882007580714" target="_blank" rel="noopener">
@@ -217,16 +219,18 @@
     <div class="container max-w-[1200px] mx-auto">
       <div class="flex items-center gap-2">
         <div class="hide-scrollbar -mb-px flex items-center gap-2 overflow-auto md:gap-3">
-          <button class="whitespace-nowrap rounded-lg px-4 py-2 text-sm font-semibold outline-none duration-300 bg-primary text-primary-foreground hover:bg-primary/75" onclick="filterTab('best', this)">Best</button>
-          <button class="whitespace-nowrap rounded-lg bg-muted px-4 py-2 text-sm font-semibold text-foreground outline-none duration-300 hover:bg-primary/75" onclick="filterTab('topup', this)">Top Up</button>
-          <button class="whitespace-nowrap rounded-lg bg-muted px-4 py-2 text-sm font-semibold text-foreground outline-none duration-300 hover:bg-primary/75" onclick="filterTab('voucher', this)">Voucher</button>
+          <button class="tab-btn whitespace-nowrap rounded-lg px-4 py-2 text-sm font-semibold outline-none duration-300 bg-primary text-primary-foreground hover:bg-primary/75" onclick="filterTab('best', this)">Best</button>
+          <button class="tab-btn whitespace-nowrap rounded-lg bg-muted px-4 py-2 text-sm font-semibold text-foreground outline-none duration-300 hover:bg-primary/75" onclick="filterTab('topup', this)">Top Up</button>
+          <button class="tab-btn whitespace-nowrap rounded-lg bg-muted px-4 py-2 text-sm font-semibold text-foreground outline-none duration-300 hover:bg-primary/75" onclick="filterTab('voucher', this)">Voucher</button>
         </div>
       </div>
       <ul class="my-8">
         <div class="mb-4 grid grid-cols-3 gap-4 sm:mb-8 sm:grid-cols-4 sm:gap-x-6 sm:gap-y-8 lg:grid-cols-5 xl:grid-cols-6" id="recGrid"></div>
       </ul>
       <div class="flex justify-center mb-8">
-        <a href="#" class="inline-flex items-center justify-center rounded-lg border border-border/50 bg-secondary/80 hover:bg-secondary px-6 py-2.5 text-sm font-semibold text-foreground transition-all duration-300">Tampilkan Lainnya...</a>
+        <a href="https://topup.nuvorastore.my.id" class="inline-flex items-center justify-center rounded-lg border border-border/50 bg-secondary/80 hover:bg-secondary px-6 py-2.5 text-sm font-semibold text-foreground transition-all duration-300">
+          Tampilkan Lainnya...
+        </a>
       </div>
     </div>
 
@@ -234,7 +238,7 @@
 </main>
 
 <!-- Footer -->
-<footer class="bg-secondary">
+<footer class="bg-secondary mt-8">
   <div class="container max-w-[1200px] mx-auto py-12 pb-8">
     <div class="xl:grid xl:grid-cols-3 xl:gap-8">
       <div class="space-y-6">
@@ -242,7 +246,7 @@
         
         <p class="text-sm leading-6 text-secondary-foreground">Nuvora Store adalah platform layanan top up game murah, cepat, dan terpercaya di Indonesia. Kami menyediakan berbagai pilihan voucher game favorit dan produk digital dengan sistem proses otomatis 24/7 demi kenyamanan transaksi Anda.</p>
         
-        <!-- Icon Kontak Font Awesome (Langsung Redirect) -->
+        <!-- Icon Kontak -->
         <div class="flex items-center space-x-4 pt-2">
           <a href="https://wa.me/62882007580714" target="_blank" rel="noopener noreferrer" title="WhatsApp CS" class="flex items-center justify-center w-11 h-11 rounded-full bg-green-600/20 hover:bg-green-600 text-green-400 hover:text-white border border-green-500/30 transition-all duration-300">
             <i class="fa-brands fa-whatsapp text-2xl"></i>
@@ -257,17 +261,17 @@
         <div>
           <h3 class="text-sm font-semibold leading-6 text-primary">Layanan</h3>
           <ul class="mt-6 space-y-4">
-            <li><a href="#" class="text-sm leading-6 text-secondary-foreground hover:text-primary/75">Top Up Game</a></li>
-            <li><a href="#" class="text-sm leading-6 text-secondary-foreground hover:text-primary/75">Voucher Digital</a></li>
-            <li><a href="#" class="text-sm leading-6 text-secondary-foreground hover:text-primary/75">Cek Transaksi</a></li>
+            <li><a href="https://topup.nuvorastore.my.id" class="text-sm leading-6 text-secondary-foreground hover:text-primary/75">Top Up Game</a></li>
+            <li><a href="https://topup.nuvorastore.my.id" class="text-sm leading-6 text-secondary-foreground hover:text-primary/75">Voucher Digital</a></li>
+            <li><a href="/cek-transaksi" class="text-sm leading-6 text-secondary-foreground hover:text-primary/75">Cek Transaksi</a></li>
           </ul>
         </div>
         <div>
           <h3 class="text-sm font-semibold leading-6 text-primary">Peta Situs</h3>
           <ul class="mt-6 space-y-4">
-            <li><a href="#" class="text-sm leading-6 text-secondary-foreground hover:text-primary/75">Beranda</a></li>
-            <li><a href="#" class="text-sm leading-6 text-secondary-foreground hover:text-primary/75">Masuk</a></li>
-            <li><a href="#" class="text-sm leading-6 text-secondary-foreground hover:text-primary/75">Daftar</a></li>
+            <li><a href="https://topup.nuvorastore.my.id" class="text-sm leading-6 text-secondary-foreground hover:text-primary/75">Beranda</a></li>
+            <li><a href="/login.html" class="text-sm leading-6 text-secondary-foreground hover:text-primary/75">Masuk</a></li>
+            <li><a href="/register.html" class="text-sm leading-6 text-secondary-foreground hover:text-primary/75">Daftar</a></li>
           </ul>
         </div>
         <div>
@@ -295,7 +299,7 @@
 </div>
 
 <script>
-/* SCRIPT BANNER SLIDER DARI REFERENSI */
+/* BANNER SLIDER */
 (function(){
   const track = document.getElementById("bannerTrack");
   const dots = document.querySelectorAll(".banner-dot");
@@ -321,7 +325,6 @@
   }
   restart();
 
-  /* Support Swipe di HP */
   let startX = 0, dragging = false;
   track.addEventListener("touchstart", e => {
     startX = e.touches[0].clientX;
@@ -338,38 +341,41 @@
   }, {passive:true});
 })();
 
-/* LOGIC PRODUCT LIST */
+/* KATALOG DATA */
 const CDN = 'https://client-cdn.bangjeff.com';
+const BASE_TOPUP = 'https://topup.nuvorastore.my.id';
 
 const popularGames = [
-  { name: 'Mobile Legends', dev: 'Moonton', link: '#', img: CDN+'/kepo.id/product/thumb%20home-01.jpg' },
-  { name: 'Free Fire', dev: 'Garena', link: '#', img: CDN+'/kepo.id/product/WhatsApp%20Image%202025-02-12%20at%2012.55.54_c2e8a136dfdfd.jpg' },
-  { name: 'Free Fire MAX', dev: 'Garena', link: '#', img: CDN+'/kepo.id/product/thumb%20home-03.jpg' },
-  { name: 'Sword Of Justice', dev: 'Exptional Global', link: '#', img: CDN+'/kepo.id/product/sojnew.png' },
-  { name: 'Lineage2M', dev: 'NCV GAMES PTE. LTD.', link: '#', img: CDN+'/kepo.id/product/lineage2m.jpg' },
-  { name: 'PUBG Mobile', dev: 'Tencent Games', link: '#', img: CDN+'/kepo.id/product/thumb%20home-05.jpg' },
-  { name: 'Roblox - Voucher', dev: 'Roblox Corporation', link: '#', img: CDN+'/kepo.id/product/MU%20Origin%202%20(25).png' },
+  { name: 'Mobile Legends', dev: 'Moonton', slug: 'mobile-legends', img: CDN+'/kepo.id/product/thumb%20home-01.jpg' },
+  { name: 'Free Fire', dev: 'Garena', slug: 'free-fire', img: CDN+'/kepo.id/product/WhatsApp%20Image%202025-02-12%20at%2012.55.54_c2e8a136dfdfd.jpg' },
+  { name: 'Free Fire MAX', dev: 'Garena', slug: 'free-fire-max', img: CDN+'/kepo.id/product/thumb%20home-03.jpg' },
+  { name: 'Sword Of Justice', dev: 'Exptional Global', slug: 'sword-of-justice', img: CDN+'/kepo.id/product/sojnew.png' },
+  { name: 'Lineage2M', dev: 'NCV GAMES PTE. LTD.', slug: 'lineage2m', img: CDN+'/kepo.id/product/lineage2m.jpg' },
+  { name: 'PUBG Mobile', dev: 'Tencent Games', slug: 'pubg-mobile', img: CDN+'/kepo.id/product/thumb%20home-05.jpg' },
+  { name: 'Roblox - Voucher', dev: 'Roblox Corporation', slug: 'roblox', img: CDN+'/kepo.id/product/MU%20Origin%202%20(25).png' },
 ];
 
 const allGames = [
-  { name: 'Google Play - Voucher', dev: 'Google LLC', link: '#', img: CDN+'/kepo.id/product/gplvoc.png', cat: ['best'] },
-  { name: 'Magic Chess: Go Go', dev: 'Vizta Games', link: '#', img: CDN+'/kepo.id/product/mcggnew.png', cat: ['best'] },
-  { name: 'Sword Of Justice', dev: 'Exptional Global', link: '#', img: CDN+'/kepo.id/product/sojnew.png', cat: ['best'] },
-  { name: 'MLBB Global', dev: 'Moonton', link: '#', img: CDN+'/kepo.id/product/Thumbnail%20Baru-ML%20Global.jpg', cat: ['best'] },
-  { name: 'Crystal of Atlan', dev: 'VSPO', link: '#', img: CDN+'/kepo.id/product/THUMB%20COA.jpg', cat: ['best'] },
-  { name: 'PUBG Mobile', dev: 'Tencent Games', link: '#', img: CDN+'/kepo.id/product/thumb%20home-05.jpg', cat: ['best'] },
-  { name: 'Genshin Impact', dev: 'HoYoverse', link: '#', img: CDN+'/kepo.id/product/genshnnew2.png', cat: ['best'] },
-  { name: 'Blood Strike', dev: 'NetEase Games', link: '#', img: CDN+'/kepo.id/product/bsnew.png', cat: ['best'] },
-  { name: 'Mobile Legends', dev: 'Moonton', link: '#', img: CDN+'/kepo.id/product/thumb%20home-01.jpg', cat: ['topup'] },
-  { name: 'Free Fire', dev: 'Garena', link: '#', img: CDN+'/kepo.id/product/WhatsApp%20Image%202025-02-12%20at%2012.55.54_c2e8a136dfdfd.jpg', cat: ['topup'] },
-  { name: 'PUBG Mobile - Voucher', dev: 'Tencent Games', link: '#', img: CDN+'/kepo.id/product/thum.webp', cat: ['voucher'] },
-  { name: 'Roblox - Voucher', dev: 'Roblox Corporation', link: '#', img: CDN+'/kepo.id/product/MU%20Origin%202%20(25).png', cat: ['voucher'] },
+  { name: 'Google Play - Voucher', dev: 'Google LLC', slug: 'google-play-voucher', img: CDN+'/kepo.id/product/gplvoc.png', cat: ['best'] },
+  { name: 'Magic Chess: Go Go', dev: 'Vizta Games', slug: 'magic-chess-go-go', img: CDN+'/kepo.id/product/mcggnew.png', cat: ['best'] },
+  { name: 'Sword Of Justice', dev: 'Exptional Global', slug: 'sword-of-justice', img: CDN+'/kepo.id/product/sojnew.png', cat: ['best'] },
+  { name: 'MLBB Global', dev: 'Moonton', slug: 'mobile-legends-global', img: CDN+'/kepo.id/product/Thumbnail%20Baru-ML%20Global.jpg', cat: ['best'] },
+  { name: 'Crystal of Atlan', dev: 'VSPO', slug: 'crystal-of-atlan', img: CDN+'/kepo.id/product/THUMB%20COA.jpg', cat: ['best'] },
+  { name: 'PUBG Mobile', dev: 'Tencent Games', slug: 'pubg-mobile', img: CDN+'/kepo.id/product/thumb%20home-05.jpg', cat: ['best'] },
+  { name: 'Genshin Impact', dev: 'HoYoverse', slug: 'genshin-impact', img: CDN+'/kepo.id/product/genshnnew2.png', cat: ['best'] },
+  { name: 'Blood Strike', dev: 'NetEase Games', slug: 'blood-strike', img: CDN+'/kepo.id/product/bsnew.png', cat: ['best'] },
+  { name: 'Mobile Legends', dev: 'Moonton', slug: 'mobile-legends', img: CDN+'/kepo.id/product/thumb%20home-01.jpg', cat: ['topup'] },
+  { name: 'Free Fire', dev: 'Garena', slug: 'free-fire', img: CDN+'/kepo.id/product/WhatsApp%20Image%202025-02-12%20at%2012.55.54_c2e8a136dfdfd.jpg', cat: ['topup'] },
+  { name: 'PUBG Mobile - Voucher', dev: 'Tencent Games', slug: 'pubg-mobile-voucher', img: CDN+'/kepo.id/product/thum.webp', cat: ['voucher'] },
+  { name: 'Roblox - Voucher', dev: 'Roblox Corporation', slug: 'roblox', img: CDN+'/kepo.id/product/MU%20Origin%202%20(25).png', cat: ['voucher'] },
 ];
+
+let currentTab = 'best';
 
 function renderPopular() {
   document.getElementById('popularList').innerHTML = popularGames.map(g => `
     <li class="relative">
-      <a class="flex items-center gap-x-2 rounded-2xl duration-300 ease-in-out hover:shadow-2xl hover:ring-2 hover:ring-primary hover:ring-offset-2 hover:ring-offset-background md:gap-x-3" href="${g.link}" style="background: hsl(var(--popular-background)); color: hsl(var(--popular-foreground));">
+      <a class="flex items-center gap-x-2 rounded-2xl duration-300 ease-in-out hover:shadow-2xl hover:ring-2 hover:ring-primary hover:ring-offset-2 hover:ring-offset-background md:gap-x-3" href="${BASE_TOPUP}/${g.slug}" style="background: hsl(var(--popular-background)); color: hsl(var(--popular-foreground));">
         <div class="flex items-center gap-3 p-2">
           <img alt="${g.name}" width="56" height="56" class="aspect-square h-14 w-14 rounded-xl object-cover object-center duration-300 md:h-20 md:w-20" src="${g.img}">
           <div class="relative flex w-full flex-col">
@@ -382,51 +388,83 @@ function renderPopular() {
   `).join('');
 }
 
-function renderRec(filter) {
-  const filtered = allGames.filter(g => g.cat.includes(filter));
-  document.getElementById('recGrid').innerHTML = filtered.map(g => `
-    <a class="relative" href="${g.link}">
+function renderRecList(gamesList) {
+  document.getElementById('recGrid').innerHTML = gamesList.map(g => `
+    <a class="relative" href="${BASE_TOPUP}/${g.slug}">
       <div class="group relative overflow-hidden rounded-2xl bg-muted duration-300 ease-in-out hover:shadow-2xl hover:ring-2 hover:ring-primary hover:ring-offset-2 hover:ring-offset-background">
         <img alt="${g.name}" width="192" height="288" class="aspect-[4/6] w-full object-cover object-center" src="${g.img}">
         <article class="absolute inset-x-0 -bottom-10 z-10 flex flex-col px-3 transition-all duration-300 ease-in-out group-hover:bottom-3 sm:px-4 group-hover:sm:bottom-4">
-          <h2 class="truncate text-sm font-semibold sm:text-base">${g.name}</h2>
-          <p class="truncate text-xxs sm:text-xs">${g.dev}</p>
+          <h2 class="truncate text-sm font-semibold sm:text-base text-white">${g.name}</h2>
+          <p class="truncate text-xxs sm:text-xs text-white/80">${g.dev}</p>
         </article>
         <div class="absolute inset-0 bg-gradient-to-t from-transparent transition-all duration-300 group-hover:from-background"></div>
       </div>
     </a>
   `).join('');
+}
+
+function renderRec(filter) {
+  currentTab = filter;
+  const filtered = allGames.filter(g => g.cat.includes(filter));
+  renderRecList(filtered);
 }
 
 function filterTab(tab, btn) {
-  document.querySelectorAll('.hide-scrollbar button').forEach(b => {
-    b.className = 'whitespace-nowrap rounded-lg bg-muted px-4 py-2 text-sm font-semibold text-foreground outline-none duration-300 hover:bg-primary/75';
+  document.querySelectorAll('.tab-btn').forEach(b => {
+    b.className = 'tab-btn whitespace-nowrap rounded-lg bg-muted px-4 py-2 text-sm font-semibold text-foreground outline-none duration-300 hover:bg-primary/75';
   });
-  btn.className = 'whitespace-nowrap rounded-lg px-4 py-2 text-sm font-semibold outline-none duration-300 bg-primary text-primary-foreground hover:bg-primary/75';
+  btn.className = 'tab-btn whitespace-nowrap rounded-lg px-4 py-2 text-sm font-semibold outline-none duration-300 bg-primary text-primary-foreground hover:bg-primary/75';
   renderRec(tab);
 }
 
-document.getElementById('searchInput')?.addEventListener('input', function(e) {
-  const q = e.target.value.toLowerCase();
-  if (!q) { renderRec('best'); return; }
-  const filtered = [...popularGames, ...allGames].filter(g => g.name.toLowerCase().includes(q) || g.dev.toLowerCase().includes(q));
-  const unique = [...new Map(filtered.map(g => [g.name, g])).values()];
-  document.getElementById('recGrid').innerHTML = unique.map(g => `
-    <a class="relative" href="${g.link}">
-      <div class="group relative overflow-hidden rounded-2xl bg-muted duration-300 ease-in-out hover:shadow-2xl hover:ring-2 hover:ring-primary hover:ring-offset-2 hover:ring-offset-background">
-        <img alt="${g.name}" width="192" height="288" class="aspect-[4/6] w-full object-cover object-center" src="${g.img}">
-        <article class="absolute inset-x-0 -bottom-10 z-10 flex flex-col px-3 transition-all duration-300 ease-in-out group-hover:bottom-3 sm:px-4 group-hover:sm:bottom-4">
-          <h2 class="truncate text-sm font-semibold sm:text-base">${g.name}</h2>
-          <p class="truncate text-xxs sm:text-xs">${g.dev}</p>
-        </article>
-        <div class="absolute inset-0 bg-gradient-to-t from-transparent transition-all duration-300 group-hover:from-background"></div>
+/* REAL-TIME SEARCH LOGIC FIX */
+function handleSearch(query) {
+  const q = query.toLowerCase().trim();
+  if (!q) {
+    renderRec(currentTab);
+    return;
+  }
+  const combined = [...popularGames, ...allGames];
+  const filtered = combined.filter(g => g.name.toLowerCase().includes(q) || g.dev.toLowerCase().includes(q));
+  
+  // Hapus duplikat
+  const unique = [...new Map(filtered.map(g => [g.slug, g])).values()];
+  
+  if (unique.length === 0) {
+    document.getElementById('recGrid').innerHTML = `
+      <div class="col-span-full text-center py-12 text-white/60">
+        <i class="fa-solid fa-magnifying-glass text-3xl mb-3 block"></i>
+        <p class="text-sm">Game "${query}" tidak ditemukan.</p>
       </div>
-    </a>
-  `).join('');
-});
+    `;
+  } else {
+    renderRecList(unique);
+  }
+}
 
-renderPopular();
-renderRec('best');
+function toggleMobileSearch() {
+  const box = document.getElementById('mobileSearchBox');
+  box.classList.toggle('hidden');
+  if(!box.classList.contains('hidden')){
+    document.getElementById('searchInputMobile').focus();
+  }
+}
+
+// Global Event Binding
+window.addEventListener('DOMContentLoaded', () => {
+  renderPopular();
+  renderRec('best');
+
+  const inputDesktop = document.getElementById('searchInput');
+  const inputMobile = document.getElementById('searchInputMobile');
+
+  if (inputDesktop) {
+    inputDesktop.addEventListener('input', (e) => handleSearch(e.target.value));
+  }
+  if (inputMobile) {
+    inputMobile.addEventListener('input', (e) => handleSearch(e.target.value));
+  }
+});
 </script>
 </body>
 </html>
