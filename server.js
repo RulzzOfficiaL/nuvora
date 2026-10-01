@@ -37,6 +37,11 @@ app.get('/image/banner2.png', (req, res) => {
     res.sendFile(path.join(__dirname, 'image', 'banner2.png'));
 });
 
+app.get('/image/banner3.png', (req, res) => {
+    res.sendFile(path.join(__dirname, 'image', 'banner3.png'));
+});
+
+
 const PORT = process.env.PORT || 3000;
 
 connectDB().catch(err => console.error("MongoDB error:", err.message));
