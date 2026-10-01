@@ -4,11 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
   <title>Nuvora Store - Top Up Game Termurah</title>
-  <link rel="shortcut icon" href="https://client-cdn.bangjeff.com/favicon-05318000.webp.webp?v=3">
-  
-  <!-- Font Awesome CDN -->
+  <link rel="shortcut icon" href="https://i.ibb.co.com/KxZv3Mqv/20260928-004709.png">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  
+
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -40,30 +39,43 @@
   </script>
   <style>
     :root {
-      --popular-background: 263.92 100% 30%;
+      /* === COSMIC AMETHYST === */
+      --popular-background: 270 50% 22%;
       --popular-foreground: 0 0% 100%;
-      --background: 260.87 70.31% 55.1%;
-      --foreground: 0 0% 100%;
-      --card: 306.67 20% 17.65%;
-      --card-foreground: 0 0% 100%;
-      --primary: 198.99 63.47% 57.06%;
-      --primary-foreground: 0 0% 96.08%;
-      --secondary: 261.72 47.54% 23.92%;
-      --secondary-foreground: 0 0% 100%;
-      --muted: 263.54 67.52% 77.06%;
-      --muted-foreground: 0 0% 98.04%;
-      --accent: 198.11 30.29% 34.31%;
-      --accent-foreground: 0 0% 100%;
-      --border: 260.74 75.7% 79.02%;
-      --input: 276.32 15.2% 50.98%;
-      --ring: 197.14 67.74% 69.61%;
+
+      --background: 270 40% 8%;
+      --foreground: 270 20% 96%;
+
+      --card: 270 35% 12%;
+      --card-foreground: 270 20% 96%;
+
+      --primary: 270 85% 65%;
+      --primary-foreground: 270 40% 8%;
+
+      --secondary: 270 35% 15%;
+      --secondary-foreground: 270 20% 96%;
+
+      --muted: 270 20% 25%;
+      --muted-foreground: 270 15% 85%;
+
+      --accent: 280 50% 35%;
+      --accent-foreground: 270 20% 96%;
+
+      --border: 270 60% 55%;
+      --input: 270 25% 20%;
+      --ring: 270 80% 65%;
+
       --radius: 0.5rem;
     }
     body {
       font-family: 'IBM Plex Sans Condensed', system-ui, sans-serif;
-      background: linear-gradient(180deg, hsl(260.87 70.31% 55.1%) 0%, hsl(261.72 47.54% 23.92%) 100%);
+      background:
+        radial-gradient(ellipse at 20% 10%, hsl(280 70% 25% / 0.6) 0%, transparent 45%),
+        radial-gradient(ellipse at 80% 80%, hsl(260 60% 20% / 0.5) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 50%, hsl(285 50% 15% / 0.4) 0%, transparent 60%),
+        linear-gradient(180deg, hsl(270 40% 8%) 0%, hsl(265 35% 6%) 50%, hsl(260 40% 4%) 100%);
       background-attachment: fixed;
-      color: hsl(0 0% 100%);
+      color: hsl(270 20% 96%);
       min-height: 100vh;
       margin: 0;
     }
@@ -75,14 +87,179 @@
     .hide-scrollbar::-webkit-scrollbar { display: none; }
     .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-    /* CSS BANNER SLIDER */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background-image:
+        radial-gradient(1px 1px at 20px 30px, rgba(255,255,255,.6), transparent),
+        radial-gradient(1px 1px at 40px 70px, rgba(200,180,255,.5), transparent),
+        radial-gradient(1.5px 1.5px at 90px 40px, rgba(255,255,255,.4), transparent),
+        radial-gradient(1px 1px at 130px 90px, rgba(200,180,255,.6), transparent),
+        radial-gradient(1px 1px at 180px 20px, rgba(255,255,255,.5), transparent),
+        radial-gradient(1.5px 1.5px at 220px 60px, rgba(180,150,255,.4), transparent),
+        radial-gradient(1px 1px at 260px 130px, rgba(255,255,255,.6), transparent),
+        radial-gradient(1px 1px at 320px 40px, rgba(200,180,255,.5), transparent);
+      background-repeat: repeat;
+      background-size: 400px 200px;
+      opacity: 0.4;
+      animation: starTwinkle 8s ease-in-out infinite;
+    }
+    @keyframes starTwinkle {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 0.6; }
+    }
+
     .banner-slider { position: relative; overflow: hidden; border-radius: 1.5rem; }
     .banner-track { display: flex; transition: transform .6s cubic-bezier(.65,0,.25,1); }
     .banner-slide { flex: 0 0 100%; min-width: 100%; }
     .banner-slide img { display: block; width: 100%; height: auto; }
     .banner-dots { position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); display: flex; gap: 6px; z-index: 10; }
     .banner-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,.45); border: 0; cursor: pointer; transition: .2s; }
-    .banner-dot.active { width: 22px; border-radius: 20px; background: #fff; }
+    .banner-dot.active { width: 22px; border-radius: 20px; background: hsl(var(--primary)); box-shadow: 0 0 12px hsl(var(--primary) / 0.8); }
+
+    .role-badge {
+      font-size: 9px;
+      padding: 2px 7px;
+      border-radius: 999px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-left: 6px;
+    }
+    .role-user     { background: hsl(270 85% 65% / 0.2); color: #d8b4fe; border: 1px solid hsl(270 85% 65% / 0.5); }
+    .role-reseller { background: rgba(255,200,60,.2);    color: #ffd166; border: 1px solid rgba(255,200,60,.4); }
+    .role-admin    { background: rgba(255,80,160,.2);    color: #ff9dd4; border: 1px solid rgba(255,80,160,.4); }
+
+    .skeleton { background: rgba(255,255,255,.06); border-radius: 8px; animation: pulse 1.5s ease-in-out infinite; }
+    @keyframes pulse { 0%,100% { opacity: .5; } 50% { opacity: 1; } }
+
+    .user-menu { position: relative; }
+    .user-dropdown {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 100%;
+      padding-top: 8px;
+      z-index: 50;
+    }
+    .user-menu:hover .user-dropdown,
+    .user-menu.open .user-dropdown { display: block; }
+    .user-dropdown-inner {
+      width: 220px;
+      border-radius: 12px;
+      overflow: hidden;
+      background: hsl(var(--secondary));
+      border: 1px solid hsl(var(--primary) / 0.25);
+      box-shadow: 0 12px 32px rgba(0,0,0,.6), 0 0 30px hsl(var(--primary) / 0.15);
+    }
+    .user-dropdown-inner a,
+    .user-dropdown-inner button {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+      padding: 11px 14px;
+      font-size: 13px;
+      color: #fff;
+      text-align: left;
+      background: none;
+      border: 0;
+      cursor: pointer;
+      transition: background .15s;
+    }
+    .user-dropdown-inner a:hover,
+    .user-dropdown-inner button:hover { background: hsl(var(--primary) / 0.15); }
+    .user-dropdown-inner .danger { color: #ff9dd4; }
+
+    #searchOverlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      background: rgba(8,4,18,.9);
+      backdrop-filter: blur(12px);
+      overflow-y: auto;
+    }
+    #searchOverlay.open { display: block; }
+
+    .avatar-circle {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, hsl(var(--primary)), hsl(280 60% 35%));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,.4), 0 0 24px hsl(var(--primary) / 0.3);
+      flex-shrink: 0;
+      border: 2px solid hsl(var(--primary) / 0.4);
+      overflow: hidden;
+    }
+    .avatar-circle img { width: 100%; height: 100%; object-fit: cover; }
+
+    .game-card-hover:hover {
+      box-shadow: 0 20px 60px hsl(var(--primary) / 0.3),
+                  0 0 40px hsl(var(--primary) / 0.2);
+    }
+
+    .header-glass {
+      background: hsl(270 40% 8% / 0.75);
+      backdrop-filter: blur(20px) saturate(180%);
+      border-bottom: 1px solid hsl(var(--primary) / 0.2);
+    }
+
+    .footer-cosmic {
+      background: linear-gradient(180deg, hsl(270 35% 10%) 0%, hsl(265 40% 5%) 100%);
+      border-top: 1px solid hsl(var(--primary) / 0.2);
+    }
+
+    .btn-amethyst-glow {
+      background: linear-gradient(135deg, hsl(var(--primary)), hsl(280 70% 50%));
+      color: #fff;
+      box-shadow: 0 4px 20px hsl(var(--primary) / 0.4),
+                  inset 0 1px 0 rgba(255,255,255,.2);
+      transition: all .2s;
+    }
+    .btn-amethyst-glow:hover {
+      box-shadow: 0 6px 30px hsl(var(--primary) / 0.6),
+                  inset 0 1px 0 rgba(255,255,255,.3);
+      transform: translateY(-1px);
+    }
+
+    .banner-glow {
+      box-shadow: 0 0 60px hsl(var(--primary) / 0.2),
+                  0 0 100px hsl(280 60% 30% / 0.15);
+    }
+
+    .logo-sparkle {
+      position: relative;
+    }
+    .logo-sparkle::after {
+      content: '✦';
+      position: absolute;
+      top: -8px;
+      right: -14px;
+      color: hsl(var(--primary));
+      font-size: 14px;
+      animation: sparkle 2s ease-in-out infinite;
+      text-shadow: 0 0 8px hsl(var(--primary));
+    }
+    @keyframes sparkle {
+      0%, 100% { opacity: 0.5; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.3); }
+    }
+
+    .text-cosmic-gradient {
+      background: linear-gradient(135deg, #d8b4fe, hsl(var(--primary)), #a855f7);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
   </style>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -91,114 +268,109 @@
 <body>
 
 <!-- Header -->
-<header class="sticky z-40 w-full bg-secondary/80 backdrop-blur-md top-0">
-  <div class="border-b border-border/20">
+<header class="sticky z-40 w-full top-0 header-glass">
+  <div class="border-b" style="border-color: hsl(var(--primary) / 0.1);">
     <div class="container max-w-[1200px] mx-auto flex h-16 items-center justify-between gap-4">
       <div class="flex items-center">
-        <a href="https://topup.nuvorastore.web.id" class="text-2xl font-bold text-white tracking-wider">
-          NUVORA<span class="text-primary">STORE</span>
+        <a href="/" class="text-2xl font-bold text-white tracking-wider logo-sparkle">
+          NUVORA<span class="text-cosmic-gradient">STORE</span>
         </a>
       </div>
       <div class="flex flex-1 items-center justify-end gap-2">
-        <!-- Input Search Desktop -->
-        <div class="relative w-full hidden md:flex max-w-xs">
-          <input type="text" id="searchInput" placeholder="Cari Game atau Voucher..." class="h-9 w-full rounded-lg border border-muted-foreground/10 bg-input/80 pl-9 pr-4 text-sm text-white placeholder-muted-foreground/75 outline-none focus:border-primary transition-colors">
-          <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground text-xs"></i>
+        <div class="relative w-full hidden md:flex max-w-xs cursor-pointer" onclick="openSearch()">
+          <div class="h-9 w-full rounded-lg border pl-9 pr-4 text-sm text-white/60 flex items-center transition-colors" style="background: rgba(20,10,35,.5); border-color: hsl(var(--primary) / 0.2);">
+            Cari Game atau Voucher...
+          </div>
+          <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-white/40 text-xs"></i>
         </div>
-        <!-- Toggle Mobile Search -->
-        <button onclick="toggleMobileSearch()" class="md:hidden inline-flex items-center justify-center rounded-lg border border-border/50 bg-transparent hover:bg-accent/75 h-9 w-9 text-sm font-medium text-white">
+        <button onclick="openSearch()" class="md:hidden inline-flex items-center justify-center rounded-lg border h-9 w-9 text-sm font-medium text-white transition-colors" style="border-color: hsl(var(--primary) / 0.3); background: rgba(20,10,35,.5);">
           <i class="fa-solid fa-magnifying-glass"></i>
         </button>
-        <!-- Toggle Mobile Menu -->
-        <button class="block md:hidden inline-flex items-center justify-center rounded-lg border border-border/50 bg-transparent hover:bg-accent/75 h-9 w-9 text-sm font-medium text-white" onclick="document.getElementById('mobileMenu').classList.toggle('hidden')">
+        <button class="block md:hidden inline-flex items-center justify-center rounded-lg border h-9 w-9 text-sm font-medium text-white transition-colors" style="border-color: hsl(var(--primary) / 0.3); background: rgba(20,10,35,.5);" onclick="document.getElementById('mobileMenu').classList.toggle('hidden')">
           <i class="fa-solid fa-bars"></i>
         </button>
       </div>
     </div>
   </div>
 
-  <!-- Input Search Mobile Box -->
-  <div id="mobileSearchBox" class="hidden md:hidden p-3 bg-secondary border-b border-border/20">
-    <div class="relative w-full">
-      <input type="text" id="searchInputMobile" placeholder="Cari Game atau Voucher..." class="h-9 w-full rounded-lg border border-muted-foreground/20 bg-input/80 pl-9 pr-4 text-sm text-white placeholder-muted-foreground/75 outline-none focus:border-primary">
-      <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground text-xs"></i>
-    </div>
-  </div>
-
-  <!-- Navbar Desktop -->
-  <nav class="container max-w-[1200px] mx-auto hidden h-10 w-full items-center justify-between border-b border-border/20 md:flex">
+  <nav class="container max-w-[1200px] mx-auto hidden h-10 w-full items-center justify-between md:flex" style="border-bottom: 1px solid hsl(var(--primary) / 0.1);">
     <div class="flex h-full items-center gap-5">
-      <a class="relative inline-flex h-full items-center gap-2 text-sm font-medium text-primary" href="https://topup.nuvorastore.web.id">
+      <a class="relative inline-flex h-full items-center gap-2 text-sm font-medium" href="/" style="color: hsl(var(--primary));">
         <i class="fa-solid fa-house text-xs"></i>
         <span>Topup</span>
-        <div class="absolute inset-x-0 bottom-0 h-[2px] bg-primary"></div>
+        <div class="absolute inset-x-0 bottom-0 h-[2px]" style="background: linear-gradient(90deg, hsl(var(--primary)), #a855f7); box-shadow: 0 0 10px hsl(var(--primary) / 0.8);"></div>
       </a>
-      <a class="relative inline-flex h-full items-center gap-2 text-sm font-medium text-foreground hover:text-primary transition-colors" href="https://topup.nuvorastore.web.id/cek-transaksi">
+      <a class="relative inline-flex h-full items-center gap-2 text-sm font-medium text-foreground transition-colors" href="https://topup.nuvorastore.web.id/cek-transaksi" onmouseover="this.style.color='hsl(var(--primary))'" onmouseout="this.style.color=''">
         <i class="fa-solid fa-receipt text-xs"></i>
         <span>Cek Transaksi</span>
       </a>
     </div>
-    <div class="flex h-full items-center gap-5">
-      <a class="relative inline-flex h-full items-center gap-2 text-sm font-medium text-foreground hover:text-primary transition-colors" href="https://topup.nuvorastore.web.id/sign-in">
-        <i class="fa-solid fa-right-to-bracket text-xs"></i>
-        <span>Masuk</span>
-      </a>
-      <a class="relative inline-flex h-full items-center gap-2 text-sm font-medium text-foreground hover:text-primary transition-colors" href="https://topup.nuvorastore.web.id/sign-up">
-        <i class="fa-solid fa-user-plus text-xs"></i>
-        <span>Daftar</span>
-      </a>
+    <div class="flex h-full items-center gap-5" id="navAuthArea">
+      <div class="skeleton" style="width:120px;height:20px;"></div>
     </div>
   </nav>
 </header>
 
 <!-- Mobile Menu Drawer -->
 <div id="mobileMenu" class="hidden fixed inset-0 z-50 md:hidden">
-  <div class="absolute inset-0 bg-black/50" onclick="document.getElementById('mobileMenu').classList.add('hidden')"></div>
-  <div class="absolute top-0 left-0 w-4/5 max-w-sm h-full bg-secondary overflow-y-auto">
-    <div class="flex items-center justify-between p-4 border-b border-border/20">
+  <div class="absolute inset-0 bg-black/70 backdrop-blur-sm" onclick="document.getElementById('mobileMenu').classList.add('hidden')"></div>
+  <div class="absolute top-0 left-0 w-4/5 max-w-sm h-full overflow-y-auto" style="background: hsl(270 35% 12%); border-right: 1px solid hsl(var(--primary) / 0.25);">
+    <div class="flex items-center justify-between p-4" style="border-bottom: 1px solid hsl(var(--primary) / 0.15);">
       <span class="text-xl font-bold text-white">NUVORA<span class="text-primary">STORE</span></span>
-      <button onclick="document.getElementById('mobileMenu').classList.add('hidden')" class="inline-flex items-center justify-center rounded-lg hover:bg-accent/75 h-9 w-9 text-white">
+      <button onclick="document.getElementById('mobileMenu').classList.add('hidden')" class="inline-flex items-center justify-center rounded-lg h-9 w-9 text-white" style="background: rgba(255,255,255,.06);">
         <i class="fa-solid fa-xmark"></i>
       </button>
     </div>
-    <nav class="p-4 space-y-2">
-      <a href="https://topup.nuvorastore.web.id" class="flex items-center justify-between py-3 text-sm font-medium text-foreground border-b border-white/10">
-        <span>Topup</span>
-        <i class="fa-solid fa-house"></i>
-      </a>
-      <a href="https://topup.nuvorastore.web.id/cek-transaksi" class="flex items-center justify-between py-3 text-sm font-medium text-foreground border-b border-white/10">
-        <span>Cek Transaksi</span>
-        <i class="fa-solid fa-receipt"></i>
-      </a>
-      <a href="https://topup.nuvorastore.web.id/sign-in" class="flex items-center justify-between py-3 text-sm font-medium text-foreground border-b border-white/10">
-        <span>Masuk</span>
-        <i class="fa-solid fa-right-to-bracket"></i>
-      </a>
-      <a href="https://topup.nuvorastore.web.id/sign-up" class="flex items-center justify-between py-3 text-sm font-medium text-foreground">
-        <span>Daftar</span>
-        <i class="fa-solid fa-user-plus"></i>
-      </a>
+    <nav class="p-4 space-y-2" id="mobileNavArea">
+      <div class="skeleton" style="height:40px;"></div>
+      <div class="skeleton" style="height:40px;"></div>
     </nav>
   </div>
 </div>
 
+<!-- Search Overlay -->
+<div id="searchOverlay">
+  <div class="max-w-[800px] mx-auto p-4">
+    <div class="relative mb-4">
+      <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-white/60"></i>
+      <input
+        type="text"
+        id="searchInputOverlay"
+        placeholder="Cari Game atau Voucher..."
+        class="w-full h-12 rounded-xl pl-11 pr-12 text-white placeholder-white/40 outline-none text-base transition-colors"
+        style="background: rgba(20,10,35,.6); border: 1px solid hsl(var(--primary) / 0.3);"
+        onfocus="this.style.borderColor='hsl(var(--primary))';this.style.boxShadow='0 0 20px hsl(var(--primary) / 0.3)'"
+        onblur="this.style.borderColor='hsl(var(--primary) / 0.3)';this.style.boxShadow='none'"
+        autocomplete="off">
+      <button onclick="closeSearch()" class="absolute right-3 top-1/2 -translate-y-1/2 w-8 h-8 rounded-lg flex items-center justify-center text-white" style="background: rgba(255,255,255,.08);">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    <div id="searchResults" class="rounded-2xl overflow-hidden" style="background: hsl(270 35% 12%); border: 1px solid hsl(var(--primary) / 0.25); box-shadow: 0 20px 60px rgba(0,0,0,.6), 0 0 50px hsl(var(--primary) / 0.15);"></div>
+    <p class="text-center text-xs text-white/40 mt-4">Ketik nama game atau publisher...</p>
+  </div>
+</div>
+
 <!-- Main Section -->
-<main class="relative">
-  <!-- Banner Slider -->
+<main class="relative" style="z-index: 1;">
   <section class="px-4 py-4 lg:py-6">
     <div class="w-full max-w-[1200px] mx-auto">
-      <div class="banner-slider">
+      <div class="banner-slider banner-glow">
         <div class="banner-track" id="bannerTrack">
           <a class="banner-slide" href="https://topup.nuvorastore.web.id">
-            <img alt="NUVORASTORE Banner 1" src="/image/banner.png" onerror="this.src='https://placehold.co/1200x400/3d1a78/ffffff?text=Banner+1'">
+            <img alt="NUVORASTORE Banner 1" src="/image/banner.png" onerror="this.src='https://placehold.co/1200x400/1a0f2e/c084fc?text=Banner+1'">
           </a>
           <a class="banner-slide" href="https://wa.me/62882007580714" target="_blank" rel="noopener">
-            <img alt="NUVORASTORE Banner 2" src="/image/banner2.png" onerror="this.src='https://placehold.co/1200x400/2a1050/ffffff?text=Banner+2'">
+            <img alt="NUVORASTORE Banner 2" src="/image/banner2.png" onerror="this.src='https://placehold.co/1200x400/0f0720/c084fc?text=Banner+2'">
+          </a>
+          <a class="banner-slide" href="https://topup.nuvorastore.web.id">
+            <img alt="NUVORASTORE Banner 3" src="/image/banner3.png" onerror="this.src='https://placehold.co/1200x400/1a0f2e/c084fc?text=Banner+3'">
           </a>
         </div>
         <div class="banner-dots" id="bannerDots">
           <button class="banner-dot active" data-idx="0" aria-label="Banner 1"></button>
           <button class="banner-dot" data-idx="1" aria-label="Banner 2"></button>
+          <button class="banner-dot" data-idx="2" aria-label="Banner 3"></button>
         </div>
       </div>
     </div>
@@ -208,9 +380,11 @@
 
     <!-- Popular Section -->
     <div class="container max-w-[1200px] mx-auto">
-      <div class="mb-5 text-foreground">
-        <h3 class="text-lg font-semibold uppercase leading-relaxed tracking-wider">&#128293; POPULER SEKARANG!</h3>
-        <p class="pl-6 text-xs">Berikut adalah beberapa produk yang paling populer saat ini.</p>
+      <div class="mb-5 text-foreground flex items-end justify-between gap-4 flex-wrap">
+        <div>
+          <h3 class="text-lg font-semibold uppercase leading-relaxed tracking-wider">🔥 POPULER SEKARANG!</h3>
+          <p class="pl-6 text-xs">Berikut adalah beberapa produk yang paling populer saat ini.</p>
+        </div>
       </div>
       <ul class="grid grid-cols-2 gap-4 md:grid-cols-3" id="popularList"></ul>
     </div>
@@ -219,39 +393,40 @@
     <div class="container max-w-[1200px] mx-auto">
       <div class="flex items-center gap-2">
         <div class="hide-scrollbar -mb-px flex items-center gap-2 overflow-auto md:gap-3">
-          <button class="tab-btn whitespace-nowrap rounded-lg px-4 py-2 text-sm font-semibold outline-none duration-300 bg-primary text-primary-foreground hover:bg-primary/75" onclick="filterTab('best', this)">Best</button>
-          <button class="tab-btn whitespace-nowrap rounded-lg bg-muted px-4 py-2 text-sm font-semibold text-foreground outline-none duration-300 hover:bg-primary/75" onclick="filterTab('topup', this)">Top Up</button>
-          <button class="tab-btn whitespace-nowrap rounded-lg bg-muted px-4 py-2 text-sm font-semibold text-foreground outline-none duration-300 hover:bg-primary/75" onclick="filterTab('voucher', this)">Voucher</button>
+          <button class="tab-btn whitespace-nowrap rounded-lg px-4 py-2 text-sm font-semibold outline-none duration-300 btn-amethyst-glow" onclick="filterTab('topup', this)">Top Up</button>
+          <button class="tab-btn whitespace-nowrap rounded-lg px-4 py-2 text-sm font-semibold text-foreground outline-none duration-300" style="background: rgba(255,255,255,.06);" onclick="filterTab('voucher', this)">Voucher</button>
         </div>
       </div>
       <ul class="my-8">
         <div class="mb-4 grid grid-cols-3 gap-4 sm:mb-8 sm:grid-cols-4 sm:gap-x-6 sm:gap-y-8 lg:grid-cols-5 xl:grid-cols-6" id="recGrid"></div>
+
+        <!-- Tombol Lihat Lainnya -->
+        <div class="flex justify-center pt-2 pb-4">
+          <a href="https://topup.nuvorastore.web.id" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-sm transition-all duration-300 btn-amethyst-glow">
+            <i class="fa-solid fa-arrow-right"></i>
+            LIHAT LAINNYA
+          </a>
+        </div>
       </ul>
-      <div class="flex justify-center mb-8">
-        <a href="https://topup.nuvorastore.web.id" class="inline-flex items-center justify-center rounded-lg border border-border/50 bg-secondary/80 hover:bg-secondary px-6 py-2.5 text-sm font-semibold text-foreground transition-all duration-300">
-          Tampilkan Lainnya...
-        </a>
-      </div>
     </div>
 
   </div>
 </main>
 
 <!-- Footer -->
-<footer class="bg-secondary mt-8">
+<footer class="mt-8 footer-cosmic">
   <div class="container max-w-[1200px] mx-auto py-12 pb-8">
     <div class="xl:grid xl:grid-cols-3 xl:gap-8">
       <div class="space-y-6">
-        <span class="text-2xl font-bold text-white tracking-wider block">NUVORA<span class="text-primary">STORE</span></span>
-        
-        <p class="text-sm leading-6 text-secondary-foreground">Nuvora Store adalah platform layanan top up game murah, cepat, dan terpercaya di Indonesia. Kami menyediakan berbagai pilihan voucher game favorit dan produk digital dengan sistem proses otomatis 24/7 demi kenyamanan transaksi Anda.</p>
-        
-        <!-- Icon Kontak -->
+        <span class="text-2xl font-bold text-white tracking-wider block">NUVORA<span class="text-cosmic-gradient">STORE</span></span>
+
+        <p class="text-sm leading-6 text-white/70">Nuvora Store adalah platform layanan top up game murah, cepat, dan terpercaya di Indonesia. Kami menyediakan berbagai pilihan voucher game favorit dan produk digital dengan sistem proses otomatis 24/7 demi kenyamanan transaksi Anda.</p>
+
         <div class="flex items-center space-x-4 pt-2">
-          <a href="https://wa.me/62882007580714" target="_blank" rel="noopener noreferrer" title="WhatsApp CS" class="flex items-center justify-center w-11 h-11 rounded-full bg-green-600/20 hover:bg-green-600 text-green-400 hover:text-white border border-green-500/30 transition-all duration-300">
+          <a href="https://wa.me/62882007580714" target="_blank" rel="noopener noreferrer" title="WhatsApp CS" class="flex items-center justify-center w-11 h-11 rounded-full transition-all duration-300" style="background: rgba(34,197,94,.15); color: #4ade80; border: 1px solid rgba(34,197,94,.3);" onmouseover="this.style.background='rgba(34,197,94,1)';this.style.color='#fff'" onmouseout="this.style.background='rgba(34,197,94,.15)';this.style.color='#4ade80'">
             <i class="fa-brands fa-whatsapp text-2xl"></i>
           </a>
-          <a href="mailto:help.nuvorastore@gmail.com" title="Email Support" class="flex items-center justify-center w-11 h-11 rounded-full bg-blue-600/20 hover:bg-blue-600 text-blue-400 hover:text-white border border-blue-500/30 transition-all duration-300">
+          <a href="mailto:help.nuvorastore@gmail.com" title="Email Support" class="flex items-center justify-center w-11 h-11 rounded-full transition-all duration-300" style="background: hsl(var(--primary) / 0.15); color: hsl(var(--primary)); border: 1px solid hsl(var(--primary) / 0.3);" onmouseover="this.style.background='hsl(var(--primary))';this.style.color='#fff'" onmouseout="this.style.background='hsl(var(--primary) / 0.15)';this.style.color='hsl(var(--primary))'">
             <i class="fa-solid fa-envelope text-xl"></i>
           </a>
         </div>
@@ -261,76 +436,63 @@
         <div>
           <h3 class="text-sm font-semibold leading-6 text-primary">Layanan</h3>
           <ul class="mt-6 space-y-4">
-            <li><a href="https://topup.nuvorastore.web.id" class="text-sm leading-6 text-secondary-foreground hover:text-primary/75">Top Up Game</a></li>
-            <li><a href="https://topup.nuvorastore.web.id/cek-transaksi" class="text-sm leading-6 text-secondary-foreground hover:text-primary/75">Cek Transaksi</a></li>
+            <li><a href="https://topup.nuvorastore.web.id" class="text-sm leading-6 text-white/70 hover:text-primary transition-colors">Top Up Game</a></li>
+            <li><a href="https://topup.nuvorastore.web.id/cek-transaksi" class="text-sm leading-6 text-white/70 hover:text-primary transition-colors">Cek Transaksi</a></li>
           </ul>
         </div>
         <div>
           <h3 class="text-sm font-semibold leading-6 text-primary">Peta Situs</h3>
           <ul class="mt-6 space-y-4">
-            <li><a href="https://topup.nuvorastore.web.id" class="text-sm leading-6 text-secondary-foreground hover:text-primary/75">Beranda</a></li>
-            <li><a href="https://topup.nuvorastore.web.id/sign-in" class="text-sm leading-6 text-secondary-foreground hover:text-primary/75">Masuk</a></li>
-            <li><a href="https://topup.nuvorastore.web.id/sign-up" class="text-sm leading-6 text-secondary-foreground hover:text-primary/75">Daftar</a></li>
+            <li><a href="/" class="text-sm leading-6 text-white/70 hover:text-primary transition-colors">Beranda</a></li>
+            <li><a href="https://topup.nuvorastore.web.id/sign-in" class="text-sm leading-6 text-white/70 hover:text-primary transition-colors">Masuk</a></li>
+            <li><a href="https://topup.nuvorastore.web.id/sign-up" class="text-sm leading-6 text-white/70 hover:text-primary transition-colors">Daftar</a></li>
           </ul>
         </div>
         <div>
           <h3 class="text-sm font-semibold leading-6 text-primary">Informasi</h3>
           <ul class="mt-6 space-y-4">
-            <li><a href="#" class="text-sm leading-6 text-secondary-foreground hover:text-primary/75">Kebijakan Privasi</a></li>
-            <li><a href="#" class="text-sm leading-6 text-secondary-foreground hover:text-primary/75">Syarat &amp; Ketentuan</a></li>
+            <li><a href="#" class="text-sm leading-6 text-white/70 hover:text-primary transition-colors">Kebijakan Privasi</a></li>
+            <li><a href="#" class="text-sm leading-6 text-white/70 hover:text-primary transition-colors">Syarat &amp; Ketentuan</a></li>
           </ul>
         </div>
       </div>
     </div>
 
-    <div class="mt-8 border-t border-border/20 pt-8">
-      <p class="text-center text-xs leading-5 text-secondary-foreground">&copy; 2026 CV. NUVORA ID. All rights reserved.</p>
+    <div class="mt-8 pt-8" style="border-top: 1px solid hsl(var(--primary) / 0.15);">
+      <p class="text-center text-xs leading-5 text-white/50">&copy; 2026 CV. NUVORA ID. All rights reserved.</p>
     </div>
   </div>
 </footer>
 
 <!-- Floating CS Button -->
 <div class="fixed bottom-4 right-4 z-50">
-  <a href="https://wa.me/62882007580714" target="_blank" rel="noopener noreferrer" class="inline-flex items-center rounded-full bg-green-600 hover:bg-green-700 px-5 py-3 text-sm font-medium text-white shadow-lg transition-all">
+  <a href="https://wa.me/62882007580714" target="_blank" rel="noopener noreferrer" class="inline-flex items-center rounded-full px-5 py-3 text-sm font-medium text-white shadow-lg transition-all" style="background: linear-gradient(135deg, #22c55e, #16a34a); box-shadow: 0 8px 24px rgba(34,197,94,.4), 0 0 30px rgba(34,197,94,.2);">
     <i class="fa-brands fa-whatsapp text-lg mr-2"></i>
     HUBUNGI CS
   </a>
 </div>
 
 <script>
-/* BANNER SLIDER */
+/* ========== KONFIGURASI ========== */
+const TOPUP_BASE = 'https://topup.nuvorastore.web.id';
+
+/* ========== BANNER SLIDER ========== */
 (function(){
   const track = document.getElementById("bannerTrack");
   const dots = document.querySelectorAll(".banner-dot");
   if(!track) return;
-  
   let idx = 0, timer;
-  const total = 2;
-  
+  const total = 3;   /* 3 banner */
   const go = i => {
     idx = (i + total) % total;
     track.style.transform = `translateX(-${idx * 100}%)`;
     dots.forEach((d, n) => d.classList.toggle("active", n === idx));
   };
-  
-  dots.forEach(d => d.addEventListener("click", () => {
-    go(Number(d.dataset.idx));
-    restart();
-  }));
-  
-  function restart(){
-    clearInterval(timer);
-    timer = setInterval(() => go(idx + 1), 4000);
-  }
+  dots.forEach(d => d.addEventListener("click", () => { go(Number(d.dataset.idx)); restart(); }));
+  function restart(){ clearInterval(timer); timer = setInterval(() => go(idx + 1), 4000); }
   restart();
-
   let startX = 0, dragging = false;
-  track.addEventListener("touchstart", e => {
-    startX = e.touches[0].clientX;
-    dragging = true;
-    clearInterval(timer);
-  }, {passive:true});
-  
+  track.addEventListener("touchstart", e => { startX = e.touches[0].clientX; dragging = true; clearInterval(timer); }, {passive:true});
   track.addEventListener("touchend", e => {
     if(!dragging) return;
     dragging = false;
@@ -340,130 +502,330 @@
   }, {passive:true});
 })();
 
-/* KATALOG DATA */
+/* ========== KATALOG DATA ========== */
 const CDN = 'https://client-cdn.bangjeff.com';
-const BASE_TOPUP = 'https://topup.nuvorastore.web.id';
 
+/* 3 game utama yang muncul di section POPULER */
 const popularGames = [
-  { name: 'Mobile Legends', dev: 'Moonton', slug: 'mobile-legends', img: CDN+'/kepo.id/product/thumb%20home-01.jpg' },
+  {
+    name: 'Free Fire',
+    dev: 'Garena',
+    slug: 'free-fire',
+    img: CDN+'/kepo.id/product/WhatsApp%20Image%202025-02-12%20at%2012.55.54_c2e8a136dfdfd.jpg'
+  },
+  {
+    name: 'Mobile Legends',
+    dev: 'Moonton',
+    slug: 'mobile-legends',
+    img: CDN+'/kepo.id/product/thumb%20home-01.jpg'
+  },
+  {
+    name: 'PUBG Mobile',
+    dev: 'Tencent Games',
+    slug: 'pubg-mobile',
+    img: CDN+'/kepo.id/product/thumb%20home-05.jpg'
+  },
+];
+
+/* Katalog lengkap buat search & rekomendasi */
+const topupGames = [
   { name: 'Free Fire', dev: 'Garena', slug: 'free-fire', img: CDN+'/kepo.id/product/WhatsApp%20Image%202025-02-12%20at%2012.55.54_c2e8a136dfdfd.jpg' },
-  { name: 'Free Fire MAX', dev: 'Garena', slug: 'free-fire-max', img: CDN+'/kepo.id/product/thumb%20home-03.jpg' },
-  { name: 'Sword Of Justice', dev: 'Exptional Global', slug: 'sword-of-justice', img: CDN+'/kepo.id/product/sojnew.png' },
-  { name: 'Lineage2M', dev: 'NCV GAMES PTE. LTD.', slug: 'lineage2m', img: CDN+'/kepo.id/product/lineage2m.jpg' },
+  { name: 'Mobile Legends', dev: 'Moonton', slug: 'mobile-legends', img: CDN+'/kepo.id/product/thumb%20home-01.jpg' },
   { name: 'PUBG Mobile', dev: 'Tencent Games', slug: 'pubg-mobile', img: CDN+'/kepo.id/product/thumb%20home-05.jpg' },
-  { name: 'Roblox - Voucher', dev: 'Roblox Corporation', slug: 'roblox', img: CDN+'/kepo.id/product/MU%20Origin%202%20(25).png' },
+  { name: 'Call of Duty Mobile', dev: 'Activision', slug: 'codm', img: CDN+'/kepo.id/product/thumb%20home-05.jpg' },
+  { name: 'Point Blank Zepetto', dev: 'Zepetto', slug: 'point-blank', img: CDN+'/kepo.id/product/thumb%20home-01.jpg' },
+  { name: 'Arena of Valor (AOV)', dev: 'Garena', slug: 'aov', img: CDN+'/kepo.id/product/thumb%20home-01.jpg' },
+  { name: 'Life After Credit', dev: 'NetEase', slug: 'life-after', img: CDN+'/kepo.id/product/genshnnew2.png' },
+  { name: 'Speed Drifter', dev: 'Garena', slug: 'speed-drifter', img: CDN+'/kepo.id/product/thumb%20home-03.jpg' },
 ];
 
-const allGames = [
-  { name: 'Google Play - Voucher', dev: 'Google LLC', slug: 'google-play-voucher', img: CDN+'/kepo.id/product/gplvoc.png', cat: ['best'] },
-  { name: 'Magic Chess: Go Go', dev: 'Vizta Games', slug: 'magic-chess-go-go', img: CDN+'/kepo.id/product/mcggnew.png', cat: ['best'] },
-  { name: 'Sword Of Justice', dev: 'Exptional Global', slug: 'sword-of-justice', img: CDN+'/kepo.id/product/sojnew.png', cat: ['best'] },
-  { name: 'MLBB Global', dev: 'Moonton', slug: 'mobile-legends-global', img: CDN+'/kepo.id/product/Thumbnail%20Baru-ML%20Global.jpg', cat: ['best'] },
-  { name: 'Crystal of Atlan', dev: 'VSPO', slug: 'crystal-of-atlan', img: CDN+'/kepo.id/product/THUMB%20COA.jpg', cat: ['best'] },
-  { name: 'PUBG Mobile', dev: 'Tencent Games', slug: 'pubg-mobile', img: CDN+'/kepo.id/product/thumb%20home-05.jpg', cat: ['best'] },
-  { name: 'Genshin Impact', dev: 'HoYoverse', slug: 'genshin-impact', img: CDN+'/kepo.id/product/genshnnew2.png', cat: ['best'] },
-  { name: 'Blood Strike', dev: 'NetEase Games', slug: 'blood-strike', img: CDN+'/kepo.id/product/bsnew.png', cat: ['best'] },
-  { name: 'Mobile Legends', dev: 'Moonton', slug: 'mobile-legends', img: CDN+'/kepo.id/product/thumb%20home-01.jpg', cat: ['topup'] },
-  { name: 'Free Fire', dev: 'Garena', slug: 'free-fire', img: CDN+'/kepo.id/product/WhatsApp%20Image%202025-02-12%20at%2012.55.54_c2e8a136dfdfd.jpg', cat: ['topup'] },
-  { name: 'PUBG Mobile - Voucher', dev: 'Tencent Games', slug: 'pubg-mobile-voucher', img: CDN+'/kepo.id/product/thum.webp', cat: ['voucher'] },
-  { name: 'Roblox - Voucher', dev: 'Roblox Corporation', slug: 'roblox', img: CDN+'/kepo.id/product/MU%20Origin%202%20(25).png', cat: ['voucher'] },
+const voucherGames = [
+  { name: 'Unipin', dev: 'Unipin', slug: 'unipin', img: CDN+'/kepo.id/product/gplvoc.png' },
+  { name: 'Garena', dev: 'Garena', slug: 'garena', img: CDN+'/kepo.id/product/thumb%20home-03.jpg' },
+  { name: 'PUBG Mobile', dev: 'Tencent Games', slug: 'pubg-mobile', img: CDN+'/kepo.id/product/thum.webp' },
+  { name: 'Razer Gold', dev: 'Razer', slug: 'razer-gold', img: CDN+'/kepo.id/product/gplvoc.png' },
+  { name: 'Gemschool', dev: 'Gemschool', slug: 'gemschool', img: CDN+'/kepo.id/product/mcggnew.png' },
+  { name: 'Steam', dev: 'Valve', slug: 'steam', img: CDN+'/kepo.id/product/MU%20Origin%202%20(25).png' },
+  { name: 'Point Blank', dev: 'Zepetto', slug: 'point-blank', img: CDN+'/kepo.id/product/thum.webp' },
+  { name: 'Roblox', dev: 'Roblox Corporation', slug: 'roblox-voucher', img: CDN+'/kepo.id/product/MU%20Origin%202%20(25).png' },
 ];
 
-let currentTab = 'best';
+const allGames = [...topupGames, ...voucherGames];
+let currentTab = 'topup';
 
+/* Helper: bikin URL topup */
+function topupUrl(slug) {
+  return `${TOPUP_BASE}/topup/${slug}`;
+}
+
+/* ========== RENDER POPULER ========== */
 function renderPopular() {
-  document.getElementById('popularList').innerHTML = popularGames.map(g => `
+  document.getElementById('popularList').innerHTML = popularGames.map(g => {
+    const href = topupUrl(g.slug);
+    return `
     <li class="relative">
-      <a class="flex items-center gap-x-2 rounded-2xl duration-300 ease-in-out hover:shadow-2xl hover:ring-2 hover:ring-primary hover:ring-offset-2 hover:ring-offset-background md:gap-x-3" href="${BASE_TOPUP}/${g.slug}" style="background: hsl(var(--popular-background)); color: hsl(var(--popular-foreground));">
+      <a class="flex items-center gap-x-2 rounded-2xl duration-300 ease-in-out hover:ring-2 game-card-hover md:gap-x-3" href="${href}" style="background: hsl(var(--popular-background)); color: hsl(var(--popular-foreground)); border: 1px solid hsl(var(--primary) / 0.2);">
         <div class="flex items-center gap-3 p-2">
-          <img alt="${g.name}" width="56" height="56" class="aspect-square h-14 w-14 rounded-xl object-cover object-center duration-300 md:h-20 md:w-20" src="${g.img}">
+          <img alt="${escapeHtml(g.name)}" width="56" height="56" class="aspect-square h-14 w-14 rounded-xl object-cover object-center duration-300 md:h-20 md:w-20" src="${g.img}" loading="lazy">
           <div class="relative flex w-full flex-col">
-            <h2 class="w-[80px] truncate text-xxs font-semibold sm:w-[125px] md:w-[150px] md:text-base lg:w-[175px]">${g.name}</h2>
-            <p class="text-xxs md:text-sm">${g.dev}</p>
+            <h2 class="w-[80px] truncate text-xxs font-semibold sm:w-[125px] md:w-[150px] md:text-base lg:w-[175px]">${escapeHtml(g.name)}</h2>
+            <p class="text-xxs md:text-sm opacity-80">${escapeHtml(g.dev)}</p>
           </div>
         </div>
       </a>
-    </li>
-  `).join('');
+    </li>`;
+  }).join('');
 }
 
-function renderRecList(gamesList) {
-  document.getElementById('recGrid').innerHTML = gamesList.map(g => `
-    <a class="relative" href="${BASE_TOPUP}/${g.slug}">
-      <div class="group relative overflow-hidden rounded-2xl bg-muted duration-300 ease-in-out hover:shadow-2xl hover:ring-2 hover:ring-primary hover:ring-offset-2 hover:ring-offset-background">
-        <img alt="${g.name}" width="192" height="288" class="aspect-[4/6] w-full object-cover object-center" src="${g.img}">
+/* ========== RENDER REKOMENDASI ========== */
+function renderRecList(gamesList, targetId = 'recGrid') {
+  document.getElementById(targetId).innerHTML = gamesList.map(g => {
+    const href = topupUrl(g.slug);
+    return `
+    <a class="relative" href="${href}">
+      <div class="group relative overflow-hidden rounded-2xl duration-300 ease-in-out hover:ring-2 game-card-hover" style="background: rgba(20,10,35,.4); border: 1px solid hsl(var(--primary) / 0.15);">
+        <img alt="${escapeHtml(g.name)}" width="192" height="288" class="aspect-[4/6] w-full object-cover object-center" src="${g.img}" loading="lazy">
         <article class="absolute inset-x-0 -bottom-10 z-10 flex flex-col px-3 transition-all duration-300 ease-in-out group-hover:bottom-3 sm:px-4 group-hover:sm:bottom-4">
-          <h2 class="truncate text-sm font-semibold sm:text-base text-white">${g.name}</h2>
-          <p class="truncate text-xxs sm:text-xs text-white/80">${g.dev}</p>
+          <h2 class="truncate text-sm font-semibold sm:text-base text-white">${escapeHtml(g.name)}</h2>
+          <p class="truncate text-xxs sm:text-xs text-white/70">${escapeHtml(g.dev)}</p>
         </article>
-        <div class="absolute inset-0 bg-gradient-to-t from-transparent transition-all duration-300 group-hover:from-background"></div>
+        <div class="absolute inset-0" style="background: linear-gradient(180deg, transparent 30%, rgba(8,4,18,.95) 100%);"></div>
       </div>
-    </a>
-  `).join('');
+    </a>`;
+  }).join('');
 }
 
 function renderRec(filter) {
   currentTab = filter;
-  const filtered = allGames.filter(g => g.cat.includes(filter));
-  renderRecList(filtered);
+  const games = filter === 'topup' ? topupGames : voucherGames;
+  renderRecList(games);
 }
 
 function filterTab(tab, btn) {
   document.querySelectorAll('.tab-btn').forEach(b => {
-    b.className = 'tab-btn whitespace-nowrap rounded-lg bg-muted px-4 py-2 text-sm font-semibold text-foreground outline-none duration-300 hover:bg-primary/75';
+    b.className = 'tab-btn whitespace-nowrap rounded-lg px-4 py-2 text-sm font-semibold text-foreground outline-none duration-300';
+    b.style.background = 'rgba(255,255,255,.06)';
+    b.style.boxShadow = 'none';
   });
-  btn.className = 'tab-btn whitespace-nowrap rounded-lg px-4 py-2 text-sm font-semibold outline-none duration-300 bg-primary text-primary-foreground hover:bg-primary/75';
+  btn.className = 'tab-btn whitespace-nowrap rounded-lg px-4 py-2 text-sm font-semibold outline-none duration-300 btn-amethyst-glow';
+  btn.style.background = '';
   renderRec(tab);
 }
 
-/* REAL-TIME SEARCH LOGIC FIX */
-function handleSearch(query) {
+/* ========== SEARCH ========== */
+function openSearch() {
+  document.getElementById('searchOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  setTimeout(() => {
+    const inp = document.getElementById('searchInputOverlay');
+    if (inp) inp.focus();
+  }, 100);
+  renderSearchResults('');
+}
+
+function closeSearch() {
+  document.getElementById('searchOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+  const inp = document.getElementById('searchInputOverlay');
+  if (inp) inp.value = '';
+  renderSearchResults('');
+}
+
+function renderSearchResults(query) {
+  const box = document.getElementById('searchResults');
   const q = query.toLowerCase().trim();
-  if (!q) {
-    renderRec(currentTab);
+  const unique = [...new Map(allGames.map(g => [g.name, g])).values()];
+  const filtered = q
+    ? unique.filter(g => g.name.toLowerCase().includes(q) || g.dev.toLowerCase().includes(q))
+    : unique;
+
+  if (filtered.length === 0) {
+    box.innerHTML = `
+      <div class="text-center py-12 text-white/50">
+        <i class="fa-solid fa-magnifying-glass text-3xl mb-3 block"></i>
+        <p class="text-sm">Game "${escapeHtml(query)}" tidak ditemukan.</p>
+        <p class="text-xs mt-3">Coba cari di <a href="${TOPUP_BASE}" class="underline" style="color:hsl(var(--primary))">topup.nuvorastore.web.id</a></p>
+      </div>`;
     return;
   }
-  const combined = [...popularGames, ...allGames];
-  const filtered = combined.filter(g => g.name.toLowerCase().includes(q) || g.dev.toLowerCase().includes(q));
-  
-  // Hapus duplikat
-  const unique = [...new Map(filtered.map(g => [g.slug, g])).values()];
-  
-  if (unique.length === 0) {
-    document.getElementById('recGrid').innerHTML = `
-      <div class="col-span-full text-center py-12 text-white/60">
-        <i class="fa-solid fa-magnifying-glass text-3xl mb-3 block"></i>
-        <p class="text-sm">Game "${query}" tidak ditemukan.</p>
+
+  box.innerHTML = filtered.map(g => {
+    const href = topupUrl(g.slug);
+    return `
+    <a href="${href}" class="flex items-center gap-3 px-4 py-3 transition-colors" style="border-bottom: 1px solid hsl(var(--primary) / 0.1);" onmouseover="this.style.background='hsl(var(--primary) / 0.1)'" onmouseout="this.style.background=''">
+      <img src="${g.img}" alt="${escapeHtml(g.name)}" class="w-12 h-12 rounded-lg object-cover flex-shrink-0" style="background: rgba(0,0,0,.3);" loading="lazy">
+      <div class="flex-1 min-w-0">
+        <div class="text-sm font-semibold text-white truncate">${escapeHtml(g.name)}</div>
+        <div class="text-xs text-white/60 truncate">${escapeHtml(g.dev)}</div>
+      </div>
+      <i class="fa-solid fa-chevron-right text-white/30 text-xs"></i>
+    </a>`;
+  }).join('');
+}
+
+/* ========== HELPERS ========== */
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"']/g, m => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;" }[m]));
+}
+function rupiah(n) { return 'Rp ' + Number(n || 0).toLocaleString('id-ID'); }
+function roleLabel(r) { return ({ user: 'User', reseller: 'Reseller', admin: 'Admin' })[r] || r; }
+function roleClass(r) { return ({ user: 'role-user', reseller: 'role-reseller', admin: 'role-admin' })[r] || ''; }
+function toast(msg) {
+  let t = document.getElementById('toast');
+  if (!t) {
+    t = document.createElement('div');
+    t.id = 'toast';
+    t.style.cssText = 'position:fixed;bottom:96px;right:16px;z-index:9999;padding:12px 18px;border-radius:12px;background:hsl(270 35% 15%);border:1px solid hsl(var(--primary)/.5);color:#fff;font-size:12px;max-width:280px;opacity:0;pointer-events:none;transition:.25s;box-shadow:0 8px 24px rgba(0,0,0,.5),0 0 30px hsl(var(--primary)/.2)';
+    document.body.appendChild(t);
+  }
+  t.textContent = msg;
+  t.style.opacity = 1;
+  clearTimeout(t._t);
+  t._t = setTimeout(() => { t.style.opacity = 0; }, 2600);
+}
+
+/* ========== AUTH NAV ========== */
+let currentUser = null;
+
+async function loadUser() {
+  try {
+    const res = await fetch(`${TOPUP_BASE}/api/auth/info`, { credentials: 'include' });
+    if (!res.ok) { currentUser = null; renderNav(); return; }
+    const data = await res.json();
+    currentUser = data.ok ? data.user : null;
+  } catch { currentUser = null; }
+  renderNav();
+}
+
+function renderNav() {
+  const desktop = document.getElementById('navAuthArea');
+  const mobile  = document.getElementById('mobileNavArea');
+  if (!desktop || !mobile) return;
+
+  if (currentUser) {
+    const rClass = roleClass(currentUser.role);
+    const rLabel = roleLabel(currentUser.role);
+    const isAdmin = currentUser.role === 'admin';
+
+    const avatarDesktop = currentUser.avatar
+      ? `<img src="${escapeHtml(currentUser.avatar)}" alt="Avatar" class="w-7 h-7 rounded-full object-cover" style="border: 2px solid hsl(var(--primary) / 0.5);box-shadow:0 0 12px hsl(var(--primary)/.3)">`
+      : `<i class="fa-solid fa-circle-user text-base"></i>`;
+
+    const avatarMobile = currentUser.avatar
+      ? `<img src="${escapeHtml(currentUser.avatar)}" alt="Avatar" class="w-full h-full rounded-full object-cover">`
+      : `<i class="fa-solid fa-user"></i>`;
+
+    desktop.innerHTML = `
+      <a href="${TOPUP_BASE}/profile" class="inline-flex items-center gap-1.5 text-sm font-medium text-foreground transition-colors" onmouseover="this.style.color='hsl(var(--primary))'" onmouseout="this.style.color=''">
+        <i class="fa-solid fa-wallet text-xs"></i>
+        <span>${rupiah(currentUser.saldo)}</span>
+      </a>
+      <div class="user-menu h-full" id="userMenu">
+        <button class="inline-flex h-full items-center gap-2 text-sm font-medium text-foreground transition-colors" onmouseover="this.style.color='hsl(var(--primary))'" onmouseout="this.style.color=''">
+          ${avatarDesktop}
+          <span>${escapeHtml(currentUser.username)}</span>
+          <span class="role-badge ${rClass}">${rLabel}</span>
+          <i class="fa-solid fa-chevron-down text-[10px] opacity-60"></i>
+        </button>
+        <div class="user-dropdown">
+          <div class="user-dropdown-inner">
+            <div class="px-4 py-3" style="border-bottom: 1px solid hsl(var(--primary) / 0.15);">
+              <div class="text-[10px] uppercase opacity-60 tracking-wider">Login sebagai</div>
+              <div class="font-bold text-sm mt-0.5">${escapeHtml(currentUser.username)}</div>
+              <div class="text-[10px] opacity-70 mt-0.5">Diskon: <strong style="color:hsl(var(--primary))">${currentUser.diskon}%</strong></div>
+            </div>
+            <a href="${TOPUP_BASE}/profile"><i class="fa-solid fa-user-gear w-4"></i> Profil Saya</a>
+            <a href="${TOPUP_BASE}/profile"><i class="fa-solid fa-wallet w-4"></i> Saldo & Top Up</a>
+            ${!isAdmin ? `<a href="${TOPUP_BASE}/upgrade"><i class="fa-solid fa-star w-4"></i> Upgrade Reseller</a>` : ''}
+            <a href="${TOPUP_BASE}/cek-transaksi"><i class="fa-solid fa-receipt w-4"></i> Cek Transaksi</a>
+            <button id="logoutBtn" class="danger" style="border-top: 1px solid hsl(var(--primary) / 0.15);"><i class="fa-solid fa-right-from-bracket w-4"></i> Logout</button>
+          </div>
+        </div>
       </div>
     `;
+
+    mobile.innerHTML = `
+      <div class="p-3 rounded-lg mb-2" style="background: rgba(20,10,35,.5); border: 1px solid hsl(var(--primary) / 0.2);">
+        <div class="flex items-center gap-3">
+          <div class="avatar-circle">
+            ${avatarMobile}
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="text-[10px] uppercase opacity-60 tracking-wider">Login sebagai</div>
+            <div class="font-bold text-sm mt-0.5 truncate flex items-center gap-1">
+              ${escapeHtml(currentUser.username)}
+              <span class="role-badge ${rClass}">${rLabel}</span>
+            </div>
+            <div class="text-xs mt-1">
+              <i class="fa-solid fa-wallet mr-1" style="color:hsl(var(--primary))"></i>
+              <strong style="color:hsl(var(--primary))">${rupiah(currentUser.saldo)}</strong>
+            </div>
+          </div>
+        </div>
+        <a href="${TOPUP_BASE}/profile" class="block w-full text-center py-2 mt-3 rounded-lg font-bold text-xs btn-amethyst-glow">
+          <i class="fa-solid fa-plus mr-1"></i> Isi Saldo
+        </a>
+      </div>
+      <a href="${TOPUP_BASE}/profile" class="flex items-center justify-between py-3 text-sm font-medium text-foreground" style="border-bottom: 1px solid hsl(var(--primary) / 0.1);">
+        <span>Profil Saya</span><i class="fa-solid fa-user-gear"></i>
+      </a>
+      <a href="${TOPUP_BASE}/cek-transaksi" class="flex items-center justify-between py-3 text-sm font-medium text-foreground" style="border-bottom: 1px solid hsl(var(--primary) / 0.1);">
+        <span>Cek Transaksi</span><i class="fa-solid fa-receipt"></i>
+      </a>
+      ${!isAdmin ? `<a href="${TOPUP_BASE}/upgrade" class="flex items-center justify-between py-3 text-sm font-medium text-foreground" style="border-bottom: 1px solid hsl(var(--primary) / 0.1);"><span>Upgrade Reseller</span><i class="fa-solid fa-star"></i></a>` : ''}
+      <button class="mobile-logout flex items-center justify-between w-full py-3 text-sm font-medium" style="color:#ff9dd4;">
+        <span>Logout</span><i class="fa-solid fa-right-from-bracket"></i>
+      </button>
+    `;
+
+    document.querySelectorAll('#logoutBtn, .mobile-logout').forEach(b => {
+      b.addEventListener('click', doLogout);
+    });
+
   } else {
-    renderRecList(unique);
+    desktop.innerHTML = `
+      <span class="text-sm text-white/60 mr-2">Login untuk diskon</span>
+      <a class="relative inline-flex h-full items-center gap-2 text-sm font-medium text-foreground transition-colors" href="${TOPUP_BASE}/sign-in" onmouseover="this.style.color='hsl(var(--primary))'" onmouseout="this.style.color=''">
+        <i class="fa-solid fa-right-to-bracket text-xs"></i>
+        <span>Masuk</span>
+      </a>
+      <a class="relative inline-flex h-full items-center gap-2 text-sm font-medium text-foreground transition-colors" href="${TOPUP_BASE}/sign-up" onmouseover="this.style.color='hsl(var(--primary))'" onmouseout="this.style.color=''">
+        <i class="fa-solid fa-user-plus text-xs"></i>
+        <span>Daftar</span>
+      </a>
+    `;
+    mobile.innerHTML = `
+      <div class="p-3 rounded-lg mb-2 text-xs" style="background: rgba(20,10,35,.5); border: 1px solid hsl(var(--primary) / 0.2);">
+        <i class="fa-solid fa-lightbulb mr-1" style="color:hsl(var(--primary))"></i> <strong>Login</strong> untuk dapat diskon hingga <strong style="color:hsl(var(--primary))">5%</strong> tiap topup!
+      </div>
+      <a href="${TOPUP_BASE}/sign-in" class="flex items-center justify-between py-3 text-sm font-medium text-foreground" style="border-bottom: 1px solid hsl(var(--primary) / 0.1);">
+        <span>Masuk</span><i class="fa-solid fa-right-to-bracket"></i>
+      </a>
+      <a href="${TOPUP_BASE}/sign-up" class="flex items-center justify-between py-3 text-sm font-medium text-foreground">
+        <span>Daftar</span><i class="fa-solid fa-user-plus"></i>
+      </a>
+    `;
   }
 }
 
-function toggleMobileSearch() {
-  const box = document.getElementById('mobileSearchBox');
-  box.classList.toggle('hidden');
-  if(!box.classList.contains('hidden')){
-    document.getElementById('searchInputMobile').focus();
-  }
+async function doLogout() {
+  try {
+    await fetch(`${TOPUP_BASE}/api/auth/logout`, { method: 'POST', credentials: 'include' });
+  } catch {}
+  currentUser = null;
+  toast('Logout berhasil.');
+  setTimeout(() => { window.location.reload(); }, 500);
 }
 
-// Global Event Binding
+/* ========== INIT ========== */
 window.addEventListener('DOMContentLoaded', () => {
   renderPopular();
-  renderRec('best');
+  renderRec('topup');
+  loadUser();
 
-  const inputDesktop = document.getElementById('searchInput');
-  const inputMobile = document.getElementById('searchInputMobile');
-
-  if (inputDesktop) {
-    inputDesktop.addEventListener('input', (e) => handleSearch(e.target.value));
-  }
-  if (inputMobile) {
-    inputMobile.addEventListener('input', (e) => handleSearch(e.target.value));
-  }
+  const inp = document.getElementById('searchInputOverlay');
+  if (inp) inp.addEventListener('input', e => renderSearchResults(e.target.value));
 });
 </script>
 </body>
-  </html>
+</html>
